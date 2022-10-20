@@ -2,13 +2,13 @@ secondsCount = int(input("Input second count: "))
 data = []
 
 # calculate seconds
-data.append(int(((secondsCount % 86400) % 3600) % 60))
+data.append(((secondsCount % 86400) % 3600) % 60)
 # calculate minutes
-data.append(int(((secondsCount % 86400) % 3600) / 60))
+data.append(((secondsCount % 86400) % 3600) // 60)
 # calculate hours
-data.append(int((secondsCount % 86400) / 3600))
+data.append((secondsCount % 86400) // 3600)
 # calculate days
-data.append(int(secondsCount / 86400))
+data.append(secondsCount // 86400)
 
 # add deco zero
 for i in range(0, len(data)-1):
