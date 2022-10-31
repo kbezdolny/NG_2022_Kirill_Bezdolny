@@ -1,4 +1,4 @@
-inputString = input()
+inputString = input("Input your string: ")
 symbolsList = {}
 
 def symbolsCount(string, resultList, position):
