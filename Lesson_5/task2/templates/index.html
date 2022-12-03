@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            outline: none;
+        }
+
+        #main {
+            width: 224px;
+            margin: auto;
+        }
+
+        .input_area {
+            width: 220px;
+            height: 25px;
+            border: 2px solid black;
+            color: black;
+            font-size: 23px;
+            display: block;
+            margin-top: 4px;
+            padding: 0 3px;
+        }
+
+        .operation_button {
+            width: 25px;
+            height: 25px;
+            color: black;
+            background: white;
+            border: 2px solid black;
+            font-size: 21px;
+        }
+
+        .operation_button:hover {
+            background: #d9d9d9;
+        }
+        .operation_button:active {
+            background: #c7c7c7;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 style="text-align: center;">Calculator</h1>
+        <form method="get">
+            <input class="input_area" name="first_num" type="number" placeholder="First number">
+            <div class="input_area" style="border: 0;  margin: 10px 0; padding: 0 10%;">
+                <button class="operation_button" type="submit" name="operation" value="+">+</button>
+                <button class="operation_button" type="submit" name="operation" value="-">-</button>
+                <button class="operation_button" type="submit" name="operation" value="*">*</button>
+                <button class="operation_button" type="submit" name="operation" value="/">/</button>
+                <button class="operation_button" type="submit" name="operation" value="**" style="font-size: 17px;">a<sup>b</sup></button>
+                <button class="operation_button" type="submit" name="operation" value="root">√</button>
+            </div>
+            <input class="input_area" name="second_num" type="number" placeholder="Second number">
+        </form>
+        <h2 style="text-align: center;">=</h2>
+        <div style="text-align: center; font-size: 20px;">{{result}}</div>
+    </div>
+</body>
+</html>
