@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        .content {
+            padding-top: 6px;
+            margin: 20px auto 0;
+            width: 60%;
+            height: auto;
+            border-top: 2px solid black;
+        }
+        .content div {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 46px">News</h1>
+    <div id="container">
+        {{content|safe}}
+    </div>
+</body>
+</html>
