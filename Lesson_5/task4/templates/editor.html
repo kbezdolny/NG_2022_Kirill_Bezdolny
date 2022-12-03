@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Editor</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        .component {
+            display: block;
+            margin: 10px auto 0;
+            width: 800px;
+            font-size: 20px;
+        }
+        .area {
+            resize: none;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 46px">News Editor</h1>
+    <div id="container">
+        <form>
+            <input class="component" name="title" type="text" placeholder="Title">
+            <textarea class="component area" name="text"></textarea>
+            <button class="component">Send</button>
+        </form>
+    </div>
+</body>
+</html>
