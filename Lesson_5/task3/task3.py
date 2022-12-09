@@ -5,8 +5,8 @@ application = Flask("News")
 
 def getNews():
     resultStr = ''
-    with open("news.json", "r", encoding="UTF-8") as f:
-        newsList = f.read()
+    with open("news.json", "r", encoding="UTF-8") as file:
+        newsList = file.read()
         newsList = json.loads(newsList)
         for news in newsList:
             resultStr += '<div class="content">'
@@ -14,19 +14,19 @@ def getNews():
             resultStr += f'<h5>{news["date"]}</h5>'
             resultStr += f'<div>{news["text"]}</div>'
             resultStr += '</div>'
-        f.close()
+        file.close()
     return resultStr
 
 def addNews(title: str, text: str):
     currentDate = datetime.datetime.today()
-    with open("news.json", "r", encoding="UTF-8") as f:
-        newsList = json.loads(f.read())
+    with open("news.json", "r", encoding="UTF-8") as file:
+        newsList = json.loads(file.read())
         newsData = {"title": title, "date": currentDate, "text": text}
         newsList.append(newsData)
-        with open("news.json", "w", encoding="UTF-8") as f2:
-            f2.write(json.dumps(newsList, indent=2))
-            f2.close()
-        f.close()
+        with open("news.json", "w", encoding="UTF-8") as file2:
+            file2.write(json.dumps(newsList, indent=2))
+            file2.close()
+        file.close()
 
 @application.route("/")
 def start():
