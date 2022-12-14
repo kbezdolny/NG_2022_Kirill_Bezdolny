@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+            font-family: "Arial", 'sans-serif';
+        }
+
+        .areas {
+            display: block;
+            border: 2px solid black;
+            margin:0 auto 5px;
+            resize: none;
+            width: 400px;
+            background-color: white;
+        }
+
+        .areas:hover {
+            background-color: #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative; margin-top: 20px;">
+        <div id="chat" class="areas" style="height: 350px; overflow: scroll;">{{messages|safe}}</div>
+        <input id="nickname" class="areas" type="text" placeholder="Nickname">
+        <textarea id="message" class="areas" placeholder="Message" style="height: 100px;"></textarea>
+        <button class="areas" onclick="getTime();">Send</button>
+    </div>
+</body>
+</html>
+<script>
+    function getTime() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("chat").innerHTML += this.responseText;
+        }
+        let nickname = document.getElementById("nickname").value;
+        let message = document.getElementById("message").value;
+        xhttp.open("GET", `/chatdb?nickname=${nickname}&message=${message}`, true);
+        xhttp.send();
+    }
+</script>
