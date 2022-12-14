@@ -59,7 +59,8 @@ def start():
 def dbWrite():
     nickname = request.args.get("nickname")
     message = request.args.get("message")
-    if nickname != None and message != None:
+    print(message)
+    if nickname != "" and message != "":
         setDataToBase(baseName, nickname, message)
     return getDataFromBase("chatDB.db")
 

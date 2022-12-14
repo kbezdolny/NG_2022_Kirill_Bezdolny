@@ -40,6 +40,7 @@
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
             document.getElementById("chat").innerHTML += this.responseText;
+            document.getElementById("message").value = "";
         }
         let nickname = document.getElementById("nickname").value;
         let message = document.getElementById("message").value;
