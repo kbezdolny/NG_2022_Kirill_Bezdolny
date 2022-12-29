@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Computer Data</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+            font-family: "Arial", 'sans-serif';
+        }
+
+        .paragraphs {
+            display: block;
+            margin: 16px 0 0 10px;
+        }
+
+        .paragraphs input {
+            width: 15px;
+            height: 15px;
+            margin: 0 0 0 5px;
+        }
+
+        .paragraph {
+            display: block;
+            margin: 4px 0 0 2px;
+            font-size: 20px;
+        }
+
+        .under_paragraphs {
+            display: block;
+            margin: 4px 0 0 22px;
+            font-size: 17px;
+        }
+
+        form {
+            width: 40%;
+            display: inline-block;
+        }
+        #data_container{
+            padding-left: 6px;
+            width: 60%;
+            min-height: 600px;
+            display: inline-block;
+            border-left: 2px solid black;
+        }
+
+        #save_button {
+            width: 200px;
+            height: auto;
+            font-size: 22px;
+            margin-top: 6px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body style="display: flex; flex: 40% 60%;">
+    <form action="/setdata">
+        {{data|safe}}
+        <button id="save_button" type="submit">Save</button>
+    </form>
+    <div id="data_container">
+        {{table|safe}}
+    </div>
+</body>
+</html>
