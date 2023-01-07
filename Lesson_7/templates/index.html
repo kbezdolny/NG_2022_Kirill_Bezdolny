@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grabber Photos</title>
+</head>
+<body>
+    <form action="/grab">
+        <input type="text" placeholder="Enter URL" name="url_string"/>
+        <button type="submit">Grab</button>
+    </form>
+    {{zipURL|safe}}
+<!-- <a>Click to download a ZIP file</a> -->
+</body>
+</html>
