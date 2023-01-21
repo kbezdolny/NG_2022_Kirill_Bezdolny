@@ -20,7 +20,8 @@ def startApplication():
 
 @application.route("/grab")
 def grabPhotos():
-    thread = threading.Thread(target=createZIPFile, args=(request.args.get("url_string"), archiveName))
+    formats = ["png", "svg", "jpg", "jpeg"]
+    thread = threading.Thread(target=createZIPFile, args=(request.args.get("url_string"), archiveName, formats))
     thread.start()
     thread.join()
     return redirect("/")
